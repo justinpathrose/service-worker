@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      navigator.serviceWorker
+        .register("./service-worker-custom.js")
+        .then(reg =>
+          console.log("service worker successfully registered ", reg)
+        )
+        .catch(() => console.log("error in registering service worker"));
+
+      window.setTimeout(() => {
+        const img = new Image();
+        img.src = "./icon.png";
+        document.body.appendChild(img);
+      }, 3000);
+    </script>
+  </body>
+</html>
