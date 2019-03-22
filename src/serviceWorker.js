@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
   // degradation caused by precaching requests for first time visit.
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('service-worker/SW.js')
+      .register('SW.js')
       .then(registration => {
         // fired when SW.js changes
         registration.onupdatefound = () => {
