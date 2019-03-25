@@ -6,6 +6,9 @@ if ('serviceWorker' in navigator) {
       .register('SW.js')
       .then(registration => {
         // fired when SW.js changes
+        document.getElementById('service-worker-update').onclick = () => {
+          registration.update()
+        }
         registration.onupdatefound = () => {
           // when updatefound event is triggered, registration.installing is set
           const installingWorker = registration.installing
